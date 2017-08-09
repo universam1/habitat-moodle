@@ -1,0 +1,11 @@
+#!{{pkgPathFor "core/bash"}}/bin/bash
+set -e
+exec 2>&1
+
+export HOME="/hab"
+themepath="/hab/svc/moodle/static/moodle/"
+
+echo "Deploying new version from {{pkg.path}} to ${themepath}"
+cp -r {{pkg.path}}/moodle-plugin-o365/* ${themepath}
+
+exit 0

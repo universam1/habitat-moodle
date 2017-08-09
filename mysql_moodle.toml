@@ -1,0 +1,5 @@
+app_username = 'moodleroot'
+app_password = 'S3cret'
+root_password = 'SuperS3cret'
+bind = '0.0.0.0'
+

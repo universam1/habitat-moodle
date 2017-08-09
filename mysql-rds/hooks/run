@@ -1,0 +1,5 @@
+#!{{pkgPathFor "core/bash"}}/bin/bash
+set -e
+exec 2>&1
+
+exec sleep infinity

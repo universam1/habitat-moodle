@@ -1,0 +1,7 @@
+ipaddress = false
+port = 3306
+root_password = false
+root_username = 'root'
+app_username = false
+app_password = false
+password_column_name = "authentication_string"

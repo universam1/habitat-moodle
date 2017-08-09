@@ -1,0 +1,12 @@
+#!{{pkgPathFor "core/bash"}}/bin/bash
+set -e
+exec 2>&1
+
+echo "running mysql-rds init"
+{{#if cfg.app_username}}
+if [ ! -d {{pkg.svc_data_path}}/mysql-rds ]; then
+echo "creating new user {{cfg.root_username}} in RDS {{cfg.ipaddress}}"
+mysql -u{{cfg.root_username}} -p{{cfg.root_password}} -h{{cfg.ipaddress}} < {{pkg.svc_config_path}}/init.sql
+mkdir {{pkg.svc_data_path}}/mysql-rds
+fi
+{{/if}}
